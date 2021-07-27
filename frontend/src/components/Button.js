@@ -2,11 +2,7 @@
 import React from 'react';
 
 const Button = ({ color, text, onclick }) => {
-  return (
-    <button style={{ backgroundColor: color }} className="header-btn">
-      {text}
-    </button>
-  );
+  return <button style={{ backgroundColor: color }}>{text}</button>;
 };
 
 Button.defaultProps = {
