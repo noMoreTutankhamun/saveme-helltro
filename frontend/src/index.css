@@ -40,7 +40,7 @@ a {
 
 button {
   display: inline-block;
-  background: var(--color-prime);
+  background-color: var(--color-prime);
   color: #fff;
   border: none;
   padding: 10px 20px;
