@@ -13,7 +13,7 @@ function required(key, defaultValue = undefined) {
 export const config = {
   jwt: {
     // jwt 토큰 발급을 위한 secretKey와 토큰 만료 기한
-    secretKey: required("JWT_SECRET"),
+    secretKey: required("JWT_SECRET", "testtesttesttest"), // 테스트용
     expiresInSec: parseInt(required("JWT_EXPIRES_SEC", 86400)), // 2일
   },
   bcrypt: {
@@ -27,10 +27,11 @@ export const config = {
   db: {
     // DB 접근을 위한 설정 정보
     development: {
-      host: required("DB_HOST"),
-      user: required("DB_USER"),
-      database: required("DB_DATABASE"),
-      password: required("DB_PASSWORD"),
+      // 테스트용
+      host: required("DB_HOST", "127.0.0.1"),
+      user: required("DB_USER", "root"),
+      database: required("DB_DATABASE", "saveme-helltro"),
+      password: required("DB_PASSWORD", "1234"),
       port: parseInt(required("DB_PORT", 3306)),
     },
   },
