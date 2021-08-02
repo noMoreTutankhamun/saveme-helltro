@@ -23,6 +23,13 @@ a {
   text-decoration: none;
 }
 
+.mainlayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -54,7 +61,7 @@ button {
 
 .footer {
   width: 100%;
-  height: 8vh;
+  height: 10vh;
   background-color: #f2f2f2;
   font-size: 12px;
   font-weight: 400;
@@ -62,6 +69,11 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: flex-end;
 }
 
 /* components-Search */
+
+.search {
+  height: 100%;
+}
