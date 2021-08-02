@@ -44,10 +44,10 @@ function Search() {
 
   return (
     <div className="search">
-      <h1 style={{ margin: 24 }}>
+      <h1 style={{ margin: 20 }}>
         🚎 {subData ? `${subData}` : `지난 달 우리 역은 얼마나 많은 사람이 이용했을까?`}
       </h1>
-      <div style={{ margin: 24 }}>
+      <div style={{ margin: 20 }}>
         <div style={{ width: '80vw' }}>
           <ReactSearchAutocomplete
             items={SearchJsonData}
