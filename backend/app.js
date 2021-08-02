@@ -17,6 +17,8 @@ app.use(helmet());
 // 라우터 기본 도메인 정의
 app.use("/auth", authRouter);
 
+app.get("/", (req, res) => res.send("성공"));
+
 // 전역 에러 처리
 app.use((req, res, next) => {
   res.sendStatus(404);

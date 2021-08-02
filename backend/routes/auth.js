@@ -12,20 +12,18 @@ const validateCredential = [
   body("email").trim().isEmail().withMessage("유효하지 않은 이메일입니다."),
   body("password")
     .trim()
-    .isLength({ min: 5 })
+    .isLength({ min: 4 })
     .withMessage("비밀번호는 5글자 이상 입력해주세요."),
-  validate,
 ];
 
 const validateSignup = [
   ...validateCredential,
   body("nickname").trim().notEmpty().withMessage("닉네임을 입력해주세요."),
-  validate,
 ];
 
 // REST API 구조를 보기 쉽도록 주요 로직은 controller로 분리
-router.post("/signup", validateSignup, authController.signup);
-router.post("/login", validateCredential, authController.login);
+router.post("/signup", validateSignup, validate, authController.signup);
+router.post("/login", validateCredential, validate, authController.login);
 router.get("/me", isAuth, authController.me);
 
 export default router;
