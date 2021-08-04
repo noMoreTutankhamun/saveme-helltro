@@ -1,7 +1,12 @@
 import React from 'react';
+import Search from '../components/Search';
 
 const Home = () => {
-  return <div>메인 페이지</div>;
+  return (
+    <div className="content">
+      <Search />
+    </div>
+  );
 };
 
 export default Home;

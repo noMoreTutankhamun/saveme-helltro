@@ -96,11 +96,14 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 140px);
-  text-align: center;
 }
 
 .content h2 {
   font-size: 2.3rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .auth-form {

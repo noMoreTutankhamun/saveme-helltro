@@ -15,10 +15,8 @@ function App() {
   axios.defaults.baseURL = 'http://localhost:8080';
 
   return (
-    <div className="mainlayout">
+    <div>
       <Header />
-
-      <Search />
 
       <Switch>
         <Route exact path="/" component={Home} />
