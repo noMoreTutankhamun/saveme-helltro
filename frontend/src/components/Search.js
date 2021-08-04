@@ -30,12 +30,26 @@ function Search() {
 
   // chart.js
   const [chart, setChart] = useState({});
+  const [data, setData] = useState([]);
 
-  function isRIDE(key) {
-    if (key.includes('RIDE') === true) {
-      return key;
+  function isRIDE(obj) {
+    // if (key.includes('RIDE') === true) {
+    //   return key;
+    // }
+
+    const arr = [];
+    const regex = new RegExp('RIDE');
+    for (const elem in obj) {
+      if (regex.test(elem)) {
+        arr.push({ [elem]: obj[elem] });
+      }
     }
+    setData(arr);
   }
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     fetchData();
@@ -50,10 +64,11 @@ function Search() {
       );
 
       console.log('응답테스트========>', response);
-      console.log('test=====>', Array.isArray(response.data.CardSubwayTime.row));
+      console.log('test=====>', isRIDE(response.data.CardSubwayTime.row[0]));
+      console.log(data);
 
       setChart({
-        labels: [Object.keys(response.data.CardSubwayTime.row.filter(isRIDE))],
+        labels: isRIDE(response.data.CardSubwayTime.row[0]),
         datasets: [
           {
             label: '테스트',
