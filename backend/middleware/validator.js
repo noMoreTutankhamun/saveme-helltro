@@ -6,6 +6,8 @@ export const validate = (req, res, next) => {
   if (errors.isEmpty()) {
     return next();
   } else {
-    return res.status(400).json({ errors: errors.array()[0].msg });
+    return res
+      .status(400)
+      .json({ message: `회원 정보 형식이 올바르지 않습니다.` });
   }
 };
