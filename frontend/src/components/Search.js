@@ -31,15 +31,30 @@ function Search() {
   // chart.js
   const [chart, setChart] = useState({});
 
-  function isRIDE(key) {
-    if (key.includes('RIDE') === true) {
-      return key;
+  function isRIDE(obj) {
+    //1. hasOwnProperty()메서드를 통해 원하는 정보가 담긴 api가 연결 됐는지 확인 + 원하는 api 연결 안되었으면 실패 표시
+    let result = {};
+    if (obj.hasOwnProperty('EIGHT_RIDE_NUM') === true) {
+      //2. Object.keys 를 통해 프로퍼티 객체의 키를 배열로 리턴한다
+      const apiData = Object.keys(obj);
+      //3. indexOf로 리턴한 apiData 배열 중에 '_RIDE'를 가진 배열만 리턴
+      let ridekeys = apiData.filter((x) => {
+        return x.indexOf('_RIDE') > -1;
+      });
+      // 4.obj의 값과 연결
+      for (const txt of ridekeys) {
+        //txt는 rideKeys의 string 값(key값)
+        result[txt] = obj[txt];
+      }
+      return result;
+    } else {
+      console.log('API 연결 실패');
     }
   }
 
   useEffect(() => {
     fetchData();
-  }, [SearchJsonData]);
+  }, [subName]);
 
   const fetchData = async () => {
     try {
@@ -49,18 +64,17 @@ function Search() {
         `http://openapi.seoul.go.kr:8088/6f71614d4a6a6f6a37376376784869/json/CardSubwayTime/1/608/202106/${query1}/${query2}`,
       );
 
-      console.log('응답테스트========>', response);
-      console.log('test=====>', Array.isArray(response.data.CardSubwayTime.row));
+      // console.log('test=====>', isRIDE(response.data.CardSubwayTime.row[0]));
 
       setChart({
-        labels: [Object.keys(response.data.CardSubwayTime.row.filter(isRIDE))],
+        labels: Object.keys(isRIDE(response.data.CardSubwayTime.row[0])),
         datasets: [
           {
-            label: '테스트',
+            label: query2,
             fill: false,
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgba(255, 99, 132, 0.2)',
-            data: Object.values(response.data.CardSubwayTime.row),
+            data: Object.values(isRIDE(response.data.CardSubwayTime.row[0])),
           },
         ],
       });
@@ -68,7 +82,7 @@ function Search() {
       console.log(error.response);
     }
   };
-  console.log('차트가있어???=====>', chart);
+
   return (
     <div className="search">
       <h1 style={{ margin: 20 }}>
@@ -87,7 +101,7 @@ function Search() {
           ></ReactSearchAutocomplete>
         </div>
       </div>
-      <main style={{ marginLeft: 40, marginRight: 50 }}>{chart ? <Chart data={chart} /> : ''}</main>
+      <main style={{ marginLeft: 40, marginRight: 50 }}>{chart && <Chart data={chart} />}</main>
     </div>
   );
 }
