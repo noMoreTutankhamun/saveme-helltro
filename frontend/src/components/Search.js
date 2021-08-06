@@ -64,7 +64,7 @@ function Search() {
         `http://openapi.seoul.go.kr:8088/6f71614d4a6a6f6a37376376784869/json/CardSubwayTime/1/608/202106/${query1}/${query2}`,
       );
 
-      console.log('test=====>', isRIDE(response.data.CardSubwayTime.row[0]));
+      // console.log('test=====>', isRIDE(response.data.CardSubwayTime.row[0]));
 
       setChart({
         labels: Object.keys(isRIDE(response.data.CardSubwayTime.row[0])),
