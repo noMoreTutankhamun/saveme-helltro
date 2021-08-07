@@ -1,0 +1,128 @@
+[33mcommit 5a7d426c85406cb45ce57c760af973c5aae78472[m[33m ([m[1;36mHEAD -> [m[1;32mfrontend_cyj[m[33m)[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Mon Aug 2 21:57:07 2021 +0900
+
+    CSS 수정
+
+[33mcommit f761e27982a52900f2dcf2acf14321357c87c588[m[33m ([m[1;31morigin/frontend_cyj[m[33m)[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Mon Aug 2 20:47:35 2021 +0900
+
+    search,chart visual
+
+[33mcommit 577d33806a22d781a95e6e701639d75a6adec503[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Sat Jul 31 14:10:29 2021 +0900
+
+    search autocomplete
+
+[33mcommit 75d505bacf5695e259a5486df985b6a3d618616e[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Wed Jul 28 15:38:39 2021 +0900
+
+    css 코드오류 수정
+
+[33mcommit d0435c8b2375b489eadad0c3f2da68dee90bb41c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 23811f7 1869328
+Author: limkhl <84858773+limkhl@users.noreply.github.com>
+Date:   Wed Jul 28 00:25:12 2021 +0900
+
+    Merge pull request #9 from noMoreTutankhamun/fix-style
+    
+    Fix common style
+
+[33mcommit 1869328d28c4d226d6534c8352469877ff1e5e82[m
+Author: limkhl <limkh.dev@gmail.com>
+Date:   Wed Jul 28 00:01:04 2021 +0900
+
+    docs: Refix common style
+
+[33mcommit d1f3bb2471d3f436ae508b1568a9afe11f5df3ef[m
+Author: limkhl <limkh.dev@gmail.com>
+Date:   Tue Jul 27 23:23:21 2021 +0900
+
+    docs: Fix common style
+
+[33mcommit 23811f79a38806de85f8838b93ca9690804ccf55[m[33m ([m[1;32mmain[m[33m)[m
+Merge: a7b1057 dab8c56
+Author: joji7752 <joji7752@gmail.com>
+Date:   Tue Jul 27 17:32:30 2021 +0900
+
+    Merge pull request #6 from noMoreTutankhamun/frontend_cyj
+    
+    테스트커밋삭제, component header footer button 추가까지 된 버전입니다.
+
+[33mcommit dab8c562ac7b75595793c2c0c7107ebbdf0af51d[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Tue Jul 27 17:27:10 2021 +0900
+
+    테스트커밋수정
+
+[33mcommit a7b1057bcbdb437e638c7882db545853d2c9c7b2[m
+Merge: ad4dd83 40d26e5
+Author: joji7752 <joji7752@gmail.com>
+Date:   Tue Jul 27 17:24:35 2021 +0900
+
+    Merge pull request #5 from noMoreTutankhamun/frontend_cyj
+    
+    gh page delete
+
+[33mcommit 40d26e57ebdc62857c18c97f674cf84dda3ef178[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Tue Jul 27 17:20:13 2021 +0900
+
+    테스트커밋
+    
+    테스트커밋
+
+[33mcommit 32e2b9063cca2f567533b85f3614b3a421e1bfcf[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Tue Jul 27 17:15:59 2021 +0900
+
+    Revert "git gh-page add"
+    
+    This reverts commit 9b4cacafbd3881155e6da33d970a9f364b349b4f.
+
+[33mcommit ad4dd8313e3bb5209f7327b52b78da1c12b3ae4b[m
+Merge: 3ffc8cd 9b4caca
+Author: joji7752 <joji7752@gmail.com>
+Date:   Tue Jul 27 16:55:12 2021 +0900
+
+    Merge pull request #4 from noMoreTutankhamun/frontend_cyj
+    
+    git gh-page add
+
+[33mcommit 9b4cacafbd3881155e6da33d970a9f364b349b4f[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Tue Jul 27 16:53:42 2021 +0900
+
+    git gh-page add
+
+[33mcommit 3ffc8cd07b95469bd5508682dbb2ab6ba001a8ad[m
+Merge: ede2194 2fafde5
+Author: limkhl <84858773+limkhl@users.noreply.github.com>
+Date:   Tue Jul 27 15:30:38 2021 +0900
+
+    Merge pull request #2 from noMoreTutankhamun/frontend_cyj
+    
+    Frontend component 추가
+
+[33mcommit 2fafde516b9f9e5e6b8292b308bb3f351f965a33[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Tue Jul 27 15:10:54 2021 +0900
+
+    component header,footer, button add
+
+[33mcommit 8e43892acbfdd5857f4ce059b91ba1986a5798a4[m
+Author: eddykang <joji7752@gmail.com>
+Date:   Tue Jul 27 10:39:27 2021 +0900
+
+    frontend components folder add
+    
+    header, footer file
+
+[33mcommit ede2194e833a280cedfae83f3071cf919b7bb415[m
+Author: limkhl <limkh.dev@gmail.com>
+Date:   Mon Jul 26 23:54:18 2021 +0900
+
+    [chore] 프로젝트 구조 세팅
