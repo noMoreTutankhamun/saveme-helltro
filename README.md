@@ -6,6 +6,9 @@
 <br>
 <br>
 
+## 화면설계
+https://whimsical.com/3sXcfkmSZNAwDHkKafeeqZ
+
 ## 실행 명령어
 
 - Frontend : `yarn start`
