@@ -7,8 +7,8 @@
 <br>
 
 ## 기능 구현
-임경희: 로그인,로그아웃,회원가입
-조영지: 검색 자동완성, 공공 데이터 openAPI Chart연동, SNS 게시판
+<임경희>: 로그인,로그아웃,회원가입<br />
+<조영지>: 검색 자동완성, 공공 데이터 openAPI Chart연동, SNS 게시판
 
 ## 화면설계
 https://whimsical.com/3sXcfkmSZNAwDHkKafeeqZ
