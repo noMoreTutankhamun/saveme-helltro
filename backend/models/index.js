@@ -8,5 +8,5 @@ const { host, user, database, password } = config.db[config.env];
 export const sequelize = new SQ.Sequelize(database, user, password, {
   host,
   dialect: "mysql",
-  logging: false, // 서버 실행할 때마다 콘솔에 쿼리 로그 뜨지 않게
+  logging: console.log, // 서버 실행할 때마다 콘솔에 쿼리 로그 뜨지 않게
 });

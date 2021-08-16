@@ -1,9 +1,9 @@
 import SQ from "sequelize";
-import { sequelize } from "../models/index.js";
+import { sequelize } from "./index.js";
 const DateTypes = SQ.DataTypes;
 
 // users 엔티티 생성
-const User = sequelize.define(
+export const User = sequelize.define(
   "user",
   {
     id: {

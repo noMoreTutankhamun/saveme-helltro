@@ -4,6 +4,7 @@ import cors from "cors"; // 외부 도메인 접근 허용
 import morgan from "morgan"; // HTTP 요청에 대한 로그 출력
 import helmet from "helmet"; // 보안 관련 HTTP 헤더 설정
 import authRouter from "./routes/auth.js";
+import storyRouter from "./routes/story.js";
 import { config } from "./config.js"; // 환경 변수를 보다 편하게 사용하기 위한 설정 파일
 import { sequelize } from "./models/index.js"; // 시퀄라이즈 ORM 참조
 
@@ -16,6 +17,7 @@ app.use(helmet());
 
 // 라우터 기본 도메인 정의
 app.use("/auth", authRouter);
+app.use("/story", storyRouter);
 
 app.get("/", (req, res) => res.send("성공"));
 
