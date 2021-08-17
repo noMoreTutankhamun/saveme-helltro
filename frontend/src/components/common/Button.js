@@ -5,15 +5,14 @@ import palette from '../../lib/styles/palette';
 const StyledButton = styled.button`
   display: inline-block;
   color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
+  border: 2px solid ${palette.purple[2]};
+  padding: 0.45rem 1rem;
   margin: 0rem;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   font-size: 1rem;
   font-family: inherit;
-  box-sizing: border-box;
 
   background-color: ${palette.purple[2]};
   &:hover {
@@ -36,10 +35,22 @@ const StyledButton = styled.button`
         background-color: ${palette.gray[7]};
       }
     `}
+
     ${(props) =>
     props.marginLeft &&
     css`
-      margin-left:0.8rem;
+      margin-left: 1rem;
+    `}
+
+    ${(props) =>
+    props.inverted &&
+    css`
+      background: #fff;
+      border: 2px solid ${palette.purple[1]};
+      color: ${palette.purple[2]};
+      box-sizing: border-box;
+      &:hover {
+        background-color: ${palette.gray[0]};
       }
     `}
 `;

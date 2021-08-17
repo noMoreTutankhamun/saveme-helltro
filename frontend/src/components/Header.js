@@ -31,9 +31,11 @@ const Header = () => {
       <div>
         <Link to="/login">
           {isLoggedIn ? (
-            <StyledButton onClick={onLogout}>로그아웃</StyledButton>
+            <StyledButton inverted onClick={onLogout}>
+              로그아웃
+            </StyledButton>
           ) : (
-            <StyledButton>로그인</StyledButton>
+            <StyledButton inverted>로그인</StyledButton>
           )}
         </Link>
         <Link to="/signup">{!isLoggedIn && <StyledButton marginLeft>회원가입</StyledButton>}</Link>
