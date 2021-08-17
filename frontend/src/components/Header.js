@@ -2,6 +2,14 @@ import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logoutAction } from '../redux/user';
+import Button from './common/Button';
+import styled from 'styled-components';
+
+const StyledButton = styled(Button)`
+  & + & {
+    margin-left: 1rem;
+  }
+`;
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -22,9 +30,13 @@ const Header = () => {
       </h1>
       <div>
         <Link to="/login">
-          {isLoggedIn ? <button onClick={onLogout}>로그아웃</button> : <button>로그인</button>}
+          {isLoggedIn ? (
+            <StyledButton onClick={onLogout}>로그아웃</StyledButton>
+          ) : (
+            <StyledButton>로그인</StyledButton>
+          )}
         </Link>
-        <Link to="/signup">{!isLoggedIn && <button>회원가입</button>}</Link>
+        <Link to="/signup">{!isLoggedIn && <StyledButton marginLeft>회원가입</StyledButton>}</Link>
       </div>
     </header>
   );
