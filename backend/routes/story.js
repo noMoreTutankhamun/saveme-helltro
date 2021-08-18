@@ -16,6 +16,7 @@ const validateStory = [
 ];
 
 // GET /story
+// GET /story?stationName=:stationName
 router.get("/", storyController.getStories);
 
 // GET /story/:id

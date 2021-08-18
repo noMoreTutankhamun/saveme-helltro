@@ -1,7 +1,6 @@
 import * as storyRepository from "../models/story.js";
 
 export async function getStories(req, res) {
-  const email = req.query.email;
   const data = await storyRepository.getAll();
   res.status(200).json(data);
 }

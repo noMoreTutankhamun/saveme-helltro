@@ -1,4 +1,3 @@
-import mysql from "mysql2"; // Node.js와 mysql을 연결해주는 mysql2 패키지 참조
 import { config } from "../config.js";
 import SQ from "sequelize";
 
