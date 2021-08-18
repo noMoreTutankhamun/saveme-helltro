@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-family: inherit;
 
   background-color: ${palette.purple[2]};
@@ -25,7 +25,9 @@ const StyledButton = styled.button`
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
       width: 100%;
-      font-size: 1.125rem;
+      font-size: 1.6rem;
+      margin: 0;
+      height: 4.8rem;
     `}
   ${(props) =>
     props.gray &&

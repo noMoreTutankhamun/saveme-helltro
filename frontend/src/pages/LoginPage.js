@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import useInput from '../hooks/useInput';
 import { loginAction } from '../redux/user';
 import axios from 'axios';
+import Button from '../components/common/Button';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -61,7 +62,7 @@ const LoginPage = () => {
           </label>
         </p>
         <p>
-          <button>로그인</button>
+          <Button fullWidth>로그인</Button>
         </p>
       </form>
     </div>
