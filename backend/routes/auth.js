@@ -13,7 +13,7 @@ const validateCredential = [
   body("password")
     .trim()
     .isLength({ min: 4 })
-    .withMessage("비밀번호는 5글자 이상 입력해주세요."),
+    .withMessage("비밀번호는 4글자 이상 입력해주세요."),
   validate,
 ];
 
@@ -22,7 +22,7 @@ const validateSignup = [
   body("password")
     .trim()
     .isLength({ min: 4 })
-    .withMessage("비밀번호는 5글자 이상 입력해주세요."),
+    .withMessage("비밀번호는 4글자 이상 입력해주세요."),
   body("nickname").trim().notEmpty().withMessage("닉네임을 입력해주세요."),
   validate,
 ];

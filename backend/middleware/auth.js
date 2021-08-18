@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import * as userRepository from "../models/user.js";
 import { config } from "../config.js";
 
-const AUTH_ERROR = { message: "인증 에러" };
+const AUTH_ERROR = { message: "권한이 없는 사용자입니다. 로그인해주세요." };
 
 // 로그인을 요청하는 유저가 가지고 있는 토큰이 유효한 토큰인지 확인하는 내부 미들웨어
 export const isAuth = async (req, res, next) => {

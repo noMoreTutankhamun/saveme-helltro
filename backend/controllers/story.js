@@ -32,7 +32,9 @@ export async function updateStory(req, res) {
       .json({ message: `해당 스토리가 존재하지 않습니다.` });
   }
   if (story.userId !== req.userId) {
-    return res.sendStatus(403);
+    return res
+      .status(403)
+      .json({ message: `해당 스토리에 대한 수정 권한이 없습니다.` });
   }
   const updated = await storyRepository.update(id, content);
   res.status(200).json(updated);
@@ -47,7 +49,9 @@ export async function deleteStory(req, res) {
       .json({ message: `해당 스토리가 존재하지 않습니다.` });
   }
   if (story.userId !== req.userId) {
-    return res.sendStatus(403);
+    return res
+      .status(403)
+      .json({ message: `해당 스토리에 대한 삭제 권한이 없습니다.` });
   }
   await storyRepository.remove(id);
   res.sendStatus(204);
