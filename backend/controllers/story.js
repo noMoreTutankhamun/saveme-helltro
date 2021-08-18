@@ -17,14 +17,14 @@ export async function getStory(req, res) {
 }
 
 export async function createStory(req, res) {
-  const { content } = req.body;
-  const story = await storyRepository.create(content, req.userId);
+  const { title, content } = req.body;
+  const story = await storyRepository.create(title, content, req.userId);
   res.status(201).json(story);
 }
 
 export async function updateStory(req, res) {
   const id = req.params.id;
-  const content = req.body.content;
+  const { title, content } = req.body;
   const story = await storyRepository.getById(id);
   if (!story) {
     return res
@@ -36,7 +36,7 @@ export async function updateStory(req, res) {
       .status(403)
       .json({ message: `해당 스토리에 대한 수정 권한이 없습니다.` });
   }
-  const updated = await storyRepository.update(id, content);
+  const updated = await storyRepository.update(id, title, content);
   res.status(200).json(updated);
 }
 

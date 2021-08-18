@@ -11,6 +11,10 @@ const Story = sequelize.define("story", {
     allowNull: false,
     primaryKey: true,
   },
+  title: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
   content: {
     type: DataTypes.TEXT,
     allowNull: false,
@@ -21,6 +25,7 @@ Story.belongsTo(User);
 const INCLUDE_USER = {
   attributes: [
     "id",
+    "title",
     "content",
     "createdAt",
     "userId",
@@ -48,14 +53,15 @@ export async function getById(id) {
   });
 }
 
-export async function create(content, userId) {
-  return Story.create({ content, userId }) //
+export async function create(title, content, userId) {
+  return Story.create({ title, content, userId }) //
     .then((data) => this.getById(data.dataValues.id));
 }
 
-export async function update(id, content) {
+export async function update(id, title, content) {
   return Story.findByPk(id, INCLUDE_USER) //
     .then((story) => {
+      story.title = title;
       story.content = content;
       return story.save();
     });
