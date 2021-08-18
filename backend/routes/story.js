@@ -22,12 +22,12 @@ router.get("/", storyController.getStories);
 router.get("/:id", storyController.getStory);
 
 // POST /story
-router.post("/", validateStory, storyController.createStory);
+router.post("/", isAuth, validateStory, storyController.createStory);
 
 // PUT /story/:id
-router.put("/:id", validateStory, storyController.updateStory);
+router.put("/:id", isAuth, validateStory, storyController.updateStory);
 
 // DELETE /story/:id
-router.delete("/:id", storyController.deleteStory);
+router.delete("/:id", isAuth, storyController.deleteStory);
 
 export default router;
