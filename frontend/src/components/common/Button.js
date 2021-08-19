@@ -33,8 +33,10 @@ const StyledButton = styled.button`
     props.gray &&
     css`
       background-color: ${palette.gray[6]};
+      border: 2px solid ${palette.gray[6]};
       &:hover {
         background-color: ${palette.gray[7]};
+        border: 2px solid ${palette.gray[7]};
       }
     `}
 
