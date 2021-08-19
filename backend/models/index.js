@@ -1,4 +1,3 @@
-import mysql from "mysql2"; // Node.js와 mysql을 연결해주는 mysql2 패키지 참조
 import { config } from "../config.js";
 import SQ from "sequelize";
 
@@ -8,5 +7,5 @@ const { host, user, database, password } = config.db[config.env];
 export const sequelize = new SQ.Sequelize(database, user, password, {
   host,
   dialect: "mysql",
-  logging: false, // 서버 실행할 때마다 콘솔에 쿼리 로그 뜨지 않게
+  logging: console.log, // 서버 실행할 때마다 콘솔에 쿼리 로그 뜨지 않게
 });

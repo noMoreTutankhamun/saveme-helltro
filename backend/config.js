@@ -5,7 +5,7 @@ dotenv.config();
 function required(key, defaultValue = undefined) {
   const value = process.env[key] || defaultValue;
   if (value == null) {
-    throw new Error(`Key ${key} is undefined`);
+    throw new Error(`환경 변수(${key})는 정의되지 않았습니다.`);
   }
   return value;
 }
