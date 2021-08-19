@@ -19,6 +19,10 @@ const Story = sequelize.define("story", {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+  stationName: {
+    type: DataTypes.STRING(45),
+    allowNull: false,
+  },
 });
 Story.belongsTo(User);
 
@@ -27,6 +31,7 @@ const INCLUDE_USER = {
     "id",
     "title",
     "content",
+    "stationName",
     "createdAt",
     "userId",
     [Sequelize.col("user.email"), "email"],
@@ -46,6 +51,13 @@ export async function getAll() {
   return Story.findAll({ ...INCLUDE_USER, ...ORDER_DESC });
 }
 
+export async function getAllByStationName(stationName) {
+  return Story.findAll({
+    where: { stationName },
+    ...INCLUDE_USER,
+  });
+}
+
 export async function getById(id) {
   return Story.findOne({
     where: { id },
@@ -53,8 +65,8 @@ export async function getById(id) {
   });
 }
 
-export async function create(title, content, userId) {
-  return Story.create({ title, content, userId }) //
+export async function create(title, content, stationName, userId) {
+  return Story.create({ title, content, stationName, userId }) //
     .then((data) => this.getById(data.dataValues.id));
 }
 

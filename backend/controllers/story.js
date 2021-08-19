@@ -1,7 +1,10 @@
 import * as storyRepository from "../models/story.js";
 
 export async function getStories(req, res) {
-  const data = await storyRepository.getAll();
+  const stationName = req.query.stationName;
+  const data = await (stationName
+    ? storyRepository.getAllByStationName(stationName)
+    : storyRepository.getAll());
   res.status(200).json(data);
 }
 
@@ -16,8 +19,13 @@ export async function getStory(req, res) {
 }
 
 export async function createStory(req, res) {
-  const { title, content } = req.body;
-  const story = await storyRepository.create(title, content, req.userId);
+  const { title, content, stationName } = req.body;
+  const story = await storyRepository.create(
+    title,
+    content,
+    stationName,
+    req.userId
+  );
   res.status(201).json(story);
 }
 

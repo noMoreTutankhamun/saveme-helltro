@@ -1,28 +1,28 @@
 import SQ from "sequelize";
 import { sequelize } from "./index.js";
-const DateTypes = SQ.DataTypes;
+const DataTypes = SQ.DataTypes;
 
 // users 엔티티 생성
 export const User = sequelize.define(
   "user",
   {
     id: {
-      type: DateTypes.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
     email: {
-      type: DateTypes.STRING(128),
+      type: DataTypes.STRING(128),
       allowNull: false,
       unique: true,
     },
     nickname: {
-      type: DateTypes.STRING(45),
+      type: DataTypes.STRING(45),
       allowNull: false,
     },
     password: {
-      type: DateTypes.STRING(128),
+      type: DataTypes.STRING(128),
       allowNull: false,
     },
   },
