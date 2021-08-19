@@ -29,6 +29,7 @@ export const isAuth = async (req, res, next) => {
     }
     // 유효한 토큰이면 다음 미들웨어에서 해당 회원 정보 조회하기 위해 회원 id를 req.userId 값에 새로 저장한다
     req.userId = user.id;
+    req.token = token;
     next();
   });
 };
