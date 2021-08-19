@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import useInput from '../hooks/useInput';
+import Button from '../components/common/Button';
 
 const SignupPage = () => {
   const [email, onChangeEmail] = useInput('');
@@ -71,7 +72,7 @@ const SignupPage = () => {
           </label>
         </p>
         <p>
-          <button>회원가입</button>
+          <Button fullWidth>회원가입</Button>
         </p>
       </form>
     </div>
