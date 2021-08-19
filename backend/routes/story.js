@@ -22,8 +22,8 @@ router.get("/", storyController.getStories);
 // GET /story/:id
 router.get("/:id", storyController.getStory);
 
-// POST /story
-router.post("/", isAuth, validateStory, storyController.createStory);
+// POST /story/write
+router.post("/write", isAuth, validateStory, storyController.createStory);
 
 // PUT /story/:id
 router.put("/:id", isAuth, validateStory, storyController.updateStory);
