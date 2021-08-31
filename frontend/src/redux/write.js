@@ -1,4 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
+import * as postAPI from '../lib/api/post';
 
 const INITIALIZE = 'write/INITIALIZE'; //모든 내용 초기화
 const CHANGE_FIELD = 'write/CHANGE_FIELD';
@@ -11,8 +12,7 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value }) => ({
 
 const initialState = {
   title: '',
-  body: '',
-  tags: [],
+  content: '',
 };
 
 const write = handleActions(

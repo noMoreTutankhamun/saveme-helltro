@@ -157,7 +157,7 @@ function Search() {
 
   return (
     <div className="search">
-      <h1 style={{ margin: 20 }}>
+      <h1 style={{ margin: 30 }}>
         🚎 {subName ? `${subName}|${subNum}` : `지난 달 우리 역은 얼마나 많은 사람이 이용했을까?`}
       </h1>
       <div style={{ margin: 20 }}>
